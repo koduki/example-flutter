@@ -1,3 +1,4 @@
+import 'package:example_flutter/pages/draw.dart';
 import 'package:flutter/material.dart';
 import './myauth.dart';
 
@@ -47,6 +48,16 @@ class _TodoListPageState extends State<TodoListPage> {
               );
             },
             child: const Icon(Icons.account_box),
+          ),
+          FloatingActionButton(
+            onPressed: () async {
+              final newListText = await Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) {
+                  return DrawPage();
+                }),
+              );
+            },
+            child: const Icon(Icons.palette),
           ),
         ]));
     return scaffold;
